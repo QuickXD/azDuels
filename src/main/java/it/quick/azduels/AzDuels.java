@@ -1,17 +1,31 @@
 package it.quick.azduels;
 
+import it.quick.azduels.commands.DuelCommand;
+import it.quick.azduels.listeners.PlayerDeathListener;
+import it.quick.azduels.managers.DuelManager;
+import it.quick.azduels.managers.InventoryManager;
+import it.quick.azduels.managers.DatabaseManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public final class AzDuels extends JavaPlugin {
+public class AzDuels extends JavaPlugin {
+    private DuelManager duelManager;
+    private DatabaseManager databaseManager;
 
     @Override
     public void onEnable() {
-        // Plugin startup logic
+        saveDefaultConfig();
+        databaseManager = new DatabaseManager(this);
+        duelManager = new DuelManager(this);
 
+        getCommand("duel").setExecutor(new DuelCommand(this));
+        getServer().getPluginManager().registerEvents(new PlayerDeathListener(duelManager), this);
     }
 
-    @Override
-    public void onDisable() {
-        // Plugin shutdown logic
+    public DuelManager getDuelManager() {
+        return duelManager;
+    }
+
+    public DatabaseManager getDatabaseManager() {
+        return databaseManager;
     }
 }

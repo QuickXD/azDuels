@@ -1,0 +1,23 @@
+duel:
+  position1:
+    world: "world"
+    x: 16
+    y: 75
+    z: -14
+  position2:
+    world: "world"
+    x: 16
+    y: 75
+    z: -24
+
+kit:
+  helmet: "DIAMOND_HELMET"
+  chestplate: "DIAMOND_CHESTPLATE"
+  leggings: "DIAMOND_LEGGINGS"
+  boots: "DIAMOND_BOOTS"
+  items:
+    - "DIAMOND_SWORD"
+    - "BOW"
+    - "ARROW:64"
+    - "FISHING_ROD"
+    - "GOLDEN_APPLE:5"

@@ -1,4 +1,11 @@
 name: azDuels
-version: '${project.version}'
+version: 1.0
 main: it.quick.azduels.AzDuels
-api-version: '1.20'
+api-version: 1.20
+commands:
+  duel:
+    description: "Invia una richiesta di duello a un giocatore"
+    permission: azduels.duel
+permissions:
+  azduels.duel:
+    default: true

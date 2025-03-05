@@ -1,0 +1,4 @@
+name: azDuels
+version: '${project.version}'
+main: it.quick.azduels.AzDuels
+api-version: '1.20'
